@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pepe.segundo_proyecto.FXMLController">
+    <children>
+        <Button layoutX="119.0" layoutY="128.0" onAction="#btnClickAction" prefHeight="52.0" prefWidth="178.0" text="Clickeame" />
+        <Label fx:id="lblOut" layoutX="53.0" layoutY="30.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" />
+      <TextField fx:id="txtUsuario" layoutX="53.0" layoutY="82.0" />
+      <TextField layoutX="221.0" layoutY="82.0" prefHeight="25.0" prefWidth="89.0" />
+    </children>
+</AnchorPane>
