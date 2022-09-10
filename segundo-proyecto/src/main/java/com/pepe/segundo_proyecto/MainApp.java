@@ -24,8 +24,10 @@ public class MainApp extends Application {
 
     static void setRoot(String fxml, String title) throws IOException {
         Scene scene = new Scene(loadFXML(fxml));
+        scene.getStylesheets().add(MainApp.class.getResource("/styles/archivo.css").toExternalForm());
         stage.setTitle(title);
         stage.setScene(scene);
+        
         stage.show();
     }
 
