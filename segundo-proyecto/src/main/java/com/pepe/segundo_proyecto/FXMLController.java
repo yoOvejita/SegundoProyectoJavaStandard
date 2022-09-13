@@ -6,6 +6,8 @@ Put header here
  */
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +17,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
@@ -31,8 +43,30 @@ public class FXMLController implements Initializable {
     private Button btnClick;
     @FXML
     private Line linea;
+    @FXML
+    private ImageView img;
+    @FXML
+    private TextField txtNombneElem;
+    @FXML
+    private CheckBox miCheck;
+    @FXML
+    private RadioButton rbf;
+
+    @FXML
+    private RadioButton rbm;
+
+    @FXML
+    private RadioButton rbo;
+    @FXML
+    private DatePicker calendario;
+    @FXML
+    private ColorPicker colorPicker;
+    @FXML
+    private Pane paneId;
     
     Stage stage;
+    
+    Image miImagen;
     
     
     @FXML
@@ -67,6 +101,45 @@ public class FXMLController implements Initializable {
         linea.setOpacity(.5);
     }
     
+    @FXML
+    void cambiarImagen(ActionEvent event) {
+    	try {
+    		miImagen = new Image(getClass().getResourceAsStream("/imagenes/" +txtNombneElem.getText() +".jpg"));
+    		img.setImage(miImagen);
+    	}catch(RuntimeException e) {
+    		 Alert alerta = new Alert(AlertType.ERROR);
+    	        alerta.setTitle("ERROR DE IMAGEN");
+    	        alerta.setHeaderText("NOMBRE DE IMAGEN NO VALIDO");
+    	        alerta.setContentText("Debe introducir un nombre de imagen valido: queso, atun");
+    	        alerta.show();
+    	}
+    }
+    @FXML
+    void verificarCheck(ActionEvent event) {
+    	if(miCheck.isSelected()) {
+    		lblOut.setText("Acepta");
+    		
+    	}else {
+    		lblOut.setText("No acepta");
+    	}
+    	
+    	//RadioButtons
+    	if(rbm.isSelected())
+    		lblOut.setText(lblOut.getText()+ "; masculino.");
+    	if(rbf.isSelected())
+    		lblOut.setText(lblOut.getText()+ "; femenino.");
+    	if(rbo.isSelected())
+    		lblOut.setText(lblOut.getText()+ "; otro género.");
+    	
+    	//DatePicker
+    	LocalDate fecha = calendario.getValue();
+    	String fechaModificada = fecha.format(DateTimeFormatter.ofPattern("dd-/-MMM-=yyyy"));
+    	lblOut.setText(lblOut.getText()+ "; " + fechaModificada);
+    		
+    	//ColorPicker & pane
+    	Color color = colorPicker.getValue();
+    	paneId.setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY,null)));
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

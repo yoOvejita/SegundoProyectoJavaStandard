@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pepe.segundo_proyecto.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="297.0" prefWidth="320" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pepe.segundo_proyecto.FXMLController">
     <children>
-        <Button fx:id="btnClick" layoutX="14.0" layoutY="120.0" onAction="#btnClickAction" prefHeight="52.0" prefWidth="142.0" text="Clickeame" />
-        <Label fx:id="lblOut" layoutX="53.0" layoutY="30.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" />
-      <TextField fx:id="txtUsuario" layoutX="53.0" layoutY="82.0" />
-      <TextField layoutX="221.0" layoutY="82.0" prefHeight="25.0" prefWidth="89.0" />
-      <Button layoutX="176.0" layoutY="120.0" mnemonicParsing="false" onAction="#btnDibujarLinea" text="Linea" />
-      <Line fx:id="linea" endX="100.0" layoutX="202.0" layoutY="30.0" startX="-100.0" />
+        <Button fx:id="btnClick" layoutX="27.0" layoutY="70.0" onAction="#btnClickAction" prefHeight="25.0" prefWidth="121.0" text="Clickeame" />
+      <TextField fx:id="txtUsuario" layoutX="27.0" layoutY="37.0" />
+      <TextField fx:id="txtNombneElem" layoutX="198.0" layoutY="37.0" prefHeight="25.0" prefWidth="89.0" />
+      <Button layoutX="198.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnDibujarLinea" text="Linea" />
+      <Line fx:id="linea" endX="100.0" layoutX="135.0" layoutY="30.0" startX="-100.0" />
+      <ImageView fx:id="img" fitHeight="121.0" fitWidth="177.0" layoutX="25.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/atun.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="23.0" layoutY="233.0" mnemonicParsing="false" onAction="#cambiarImagen" prefHeight="25.0" prefWidth="126.0" text="Cambiar" />
+      <CheckBox mnemonicParsing="false" text="CheckBox" />
+      <CheckBox fx:id="miCheck" layoutX="199.0" layoutY="140.0" mnemonicParsing="false" text="Acepto" />
+      <Label layoutX="172.0" layoutY="112.0" prefHeight="17.0" prefWidth="137.0" text="Terminos de conotrato" />
+        <Label fx:id="lblOut" layoutX="14.0" layoutY="270.0" minHeight="16" minWidth="69" prefHeight="25.0" prefWidth="303.0" />
+      <Button layoutX="222.0" layoutY="246.0" mnemonicParsing="false" onAction="#verificarCheck" prefHeight="25.0" prefWidth="73.0" text="Instalar" />
+      <RadioButton fx:id="rbm" layoutX="197.0" layoutY="157.0" mnemonicParsing="false" text="Masculino">
+         <toggleGroup>
+            <ToggleGroup fx:id="genero" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbf" layoutX="198.0" layoutY="174.0" mnemonicParsing="false" text="Femenino" toggleGroup="$genero" />
+      <RadioButton fx:id="rbo" layoutX="197.0" layoutY="191.0" mnemonicParsing="false" text="Otro" toggleGroup="$genero" />
+      <DatePicker fx:id="calendario" layoutX="185.0" layoutY="212.0" prefHeight="25.0" prefWidth="113.0" />
+      <ColorPicker fx:id="colorPicker" layoutX="19.0" layoutY="258.0" />
+      <Pane fx:id="paneId" layoutX="173.0" layoutY="243.0" prefHeight="48.0" prefWidth="46.0" />
     </children>
 </AnchorPane>
