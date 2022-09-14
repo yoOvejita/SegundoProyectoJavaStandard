@@ -2,19 +2,23 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="297.0" prefWidth="320" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pepe.segundo_proyecto.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="428.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pepe.segundo_proyecto.FXMLController">
     <children>
         <Button fx:id="btnClick" layoutX="27.0" layoutY="70.0" onAction="#btnClickAction" prefHeight="25.0" prefWidth="121.0" text="Clickeame" />
       <TextField fx:id="txtUsuario" layoutX="27.0" layoutY="37.0" />
@@ -42,5 +46,11 @@
       <DatePicker fx:id="calendario" layoutX="185.0" layoutY="212.0" prefHeight="25.0" prefWidth="113.0" />
       <ColorPicker fx:id="colorPicker" layoutX="19.0" layoutY="258.0" />
       <Pane fx:id="paneId" layoutX="173.0" layoutY="243.0" prefHeight="48.0" prefWidth="46.0" />
+      <ChoiceBox fx:id="miChoice" layoutX="341.0" layoutY="25.0" prefWidth="150.0" />
+      <Label fx:id="valorChoice" layoutX="341.0" layoutY="54.0" prefHeight="17.0" prefWidth="149.0" text="Label" />
+      <Slider fx:id="miSlider" layoutX="341.0" layoutY="88.0" majorTickUnit="15.0" minorTickCount="5" prefHeight="14.0" prefWidth="149.0" showTickLabels="true" showTickMarks="true" value="15.0" />
+      <Label fx:id="lblSlider" layoutX="342.0" layoutY="132.0" prefHeight="17.0" prefWidth="149.0" text="Label" />
+      <ProgressBar fx:id="miBarra" layoutX="339.0" layoutY="157.0" prefHeight="18.0" prefWidth="159.0" progress="0.11" />
+      <Circle fx:id="circulo" fill="DODGERBLUE" layoutX="204.0" layoutY="324.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
