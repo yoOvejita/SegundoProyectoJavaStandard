@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane id="AnchorPane" prefHeight="428.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pepe.segundo_proyecto.FXMLController">
     <children>
@@ -35,7 +36,7 @@
       <CheckBox fx:id="miCheck" layoutX="199.0" layoutY="140.0" mnemonicParsing="false" text="Acepto" />
       <Label layoutX="172.0" layoutY="112.0" prefHeight="17.0" prefWidth="137.0" text="Terminos de conotrato" />
         <Label fx:id="lblOut" layoutX="14.0" layoutY="270.0" minHeight="16" minWidth="69" prefHeight="25.0" prefWidth="303.0" />
-      <Button layoutX="222.0" layoutY="246.0" mnemonicParsing="false" onAction="#verificarCheck" prefHeight="25.0" prefWidth="73.0" text="Instalar" />
+      <Button fx:id="btnInstalar" layoutX="222.0" layoutY="246.0" mnemonicParsing="false" onAction="#verificarCheck" prefHeight="25.0" prefWidth="73.0" text="Instalar" />
       <RadioButton fx:id="rbm" layoutX="197.0" layoutY="157.0" mnemonicParsing="false" text="Masculino">
          <toggleGroup>
             <ToggleGroup fx:id="genero" />
@@ -51,6 +52,7 @@
       <Slider fx:id="miSlider" layoutX="341.0" layoutY="88.0" majorTickUnit="15.0" minorTickCount="5" prefHeight="14.0" prefWidth="149.0" showTickLabels="true" showTickMarks="true" value="15.0" />
       <Label fx:id="lblSlider" layoutX="342.0" layoutY="132.0" prefHeight="17.0" prefWidth="149.0" text="Label" />
       <ProgressBar fx:id="miBarra" layoutX="339.0" layoutY="157.0" prefHeight="18.0" prefWidth="159.0" progress="0.11" />
-      <Circle fx:id="circulo" fill="DODGERBLUE" layoutX="204.0" layoutY="324.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circulo" fill="DODGERBLUE" layoutX="44.0" layoutY="369.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="rectangulo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="120.0" layoutY="350.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
     </children>
 </AnchorPane>

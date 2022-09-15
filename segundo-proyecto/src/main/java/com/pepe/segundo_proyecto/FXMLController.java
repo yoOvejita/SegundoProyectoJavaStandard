@@ -8,8 +8,13 @@ Put header here
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.ResourceBundle;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -39,6 +44,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -84,6 +91,10 @@ public class FXMLController implements Initializable {
     private ProgressBar miBarra;
     @FXML
     private Circle circulo;
+    @FXML
+    private Rectangle rectangulo;
+    @FXML
+    private Button btnInstalar;
 
     Stage stage;
 
@@ -172,13 +183,47 @@ public class FXMLController implements Initializable {
     	
     	progreso += 0.1;
     	miBarra.setProgress(progreso);
+    	Random rnd = new Random();
+    	int valor = rnd.nextInt(200);
     	
     	//Animaciones
     	TranslateTransition translate = new TranslateTransition();
-    	translate.setNode(circulo);
+    	translate.setNode(btnInstalar);
     	translate.setDuration(Duration.millis(5000));
-    	translate.setByX(250);
+    	translate.setByX(valor);
+    	translate.setByY(-100);
+    	translate.setAutoReverse(true);
     	translate.play();
+    	
+    	RotateTransition rotate = new RotateTransition();
+    	rotate.setNode(btnInstalar);
+    	rotate.setDuration(Duration.millis(3000));
+    	rotate.setCycleCount(5);
+    	rotate.setInterpolator(Interpolator.LINEAR);
+    	rotate.setToAngle(360);
+    	rotate.setAxis(Rotate.Z_AXIS);
+    	rotate.play();
+
+    	
+    	FadeTransition fade = new FadeTransition();
+    	fade.setNode(btnInstalar);
+    	fade.setDuration(Duration.millis(5500));
+    	fade.setCycleCount(2);
+    	fade.setInterpolator(Interpolator.LINEAR);
+    	fade.setFromValue(1);
+    	fade.setToValue(0);
+    	fade.play();
+    	
+    	ScaleTransition scale = new ScaleTransition();
+    	scale.setNode(btnInstalar);
+    	scale.setFromX(1);
+    	scale.setToX(2);
+    	scale.setFromY(1);
+    	scale.setToY(2);
+    	scale.setDuration(Duration.millis(2000));
+    	scale.setCycleCount(3);
+    	scale.play();
+    	
 
     }
     @Override
