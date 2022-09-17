@@ -54,5 +54,6 @@
       <ProgressBar fx:id="miBarra" layoutX="339.0" layoutY="157.0" prefHeight="18.0" prefWidth="159.0" progress="0.11" />
       <Circle fx:id="circulo" fill="DODGERBLUE" layoutX="44.0" layoutY="369.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle fx:id="rectangulo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="120.0" layoutY="350.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+      <Button layoutX="410.0" layoutY="388.0" mnemonicParsing="false" onAction="#abrirVentana" text="Abrir ventana" />
     </children>
 </AnchorPane>
